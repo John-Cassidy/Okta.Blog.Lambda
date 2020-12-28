@@ -16,6 +16,10 @@ Instructions on configuring Secrets Manager tool to store sensitive data during 
 [Secret Manager](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-5.0&tabs=windows)
 The Secret Manager tool stores sensitive data during the development of an ASP.NET Core project. In this context, a piece of sensitive data is an app secret. App secrets are stored in a separate location from the project tree. The app secrets are associated with a specific project or shared across several projects. The app secrets aren't checked into source control.
 
+NOTE: when deploying to AWS Lambda using Visual Studio, you need to copy the secrets into the appsettings.json file to successfully deploy. 
+
+In the future it is suggested to update the application to get parameters from [AWS Parameter Store](https://www.jamesqmurphy.com/blog/2020/05/config-providers)
+
 ### Adding AWS SDK for .NET ###
 
 To integrate the AWS SDK for .NET with the dependency injection system built into ASP.NET Core add the NuGet 
