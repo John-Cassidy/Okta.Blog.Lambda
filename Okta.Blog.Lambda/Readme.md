@@ -1,8 +1,20 @@
 # ASP.NET Core Web API Serverless Application
 
-This project shows how to run an ASP.NET Core Web Application as a serverless application. The NuGet package [Amazon.Lambda.AspNetCoreServer](https://www.nuget.org/packages/Amazon.Lambda.AspNetCoreServer) contains a Lambda function that is used to translate requests from API Gateway into the ASP.NET Core framework and then the responses from ASP.NET Core back to API Gateway.
+This project shows how to run and secure an ASP.NET Core Web Application as a serverless application using Okta.
+
+[This article](https://developer.okta.com/blog/2020/06/08/serverless-lambda-functions-csharp) walks you through the creation, configuration, and implementation.
+
+The NuGet package [Amazon.Lambda.AspNetCoreServer](https://www.nuget.org/packages/Amazon.Lambda.AspNetCoreServer) contains a Lambda function that is used to translate requests from API Gateway into the ASP.NET Core framework and then the responses from ASP.NET Core back to API Gateway.
+
+The Nuget package [Okta.AspNetCore](https://www.nuget.org/packages/Okta.AspNetCore/3.5.0?_src=template) contains the Authentication integration hooks to authenticate a user.
 
 For more information about how the Amazon.Lambda.AspNetCoreServer package works and how to extend its behavior view its [README](https://github.com/aws/aws-lambda-dotnet/blob/master/Libraries/src/Amazon.Lambda.AspNetCoreServer/README.md) file in GitHub.
+
+### Secret Manager ###
+
+Instructions on configuring Secrets Manager tool to store sensitive data during development
+[Secret Manager](https://docs.microsoft.com/en-us/aspnet/core/security/app-secrets?view=aspnetcore-5.0&tabs=windows)
+The Secret Manager tool stores sensitive data during the development of an ASP.NET Core project. In this context, a piece of sensitive data is an app secret. App secrets are stored in a separate location from the project tree. The app secrets are associated with a specific project or shared across several projects. The app secrets aren't checked into source control.
 
 ### Adding AWS SDK for .NET ###
 
